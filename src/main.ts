@@ -1,12 +1,4 @@
-class Person {
-	name: string;
-	age: number;
-	constructor(name: string, age: number) {
-		this.name = name;
-		this.age = age;
-	}
+import Person, { randomAge } from './Person';
 
-	describeMe() {
-		console.log(`Hi, my name is ${this.name} and I am ${this.age} years old`);
-	}
-}
+const bob = new Person('bob', randomAge());
+bob.describeMe();
