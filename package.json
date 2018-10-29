@@ -5,8 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "parcel src/index.html",
-		"build": "tsc -p tsconfig.release.json",
-		"build:watch": "tsc -w -p tsconfig.release.json",
+		"build": "parcel build src/index.html",
+		"__compile:ts": "tsc -p tsconfig.release.json",
+		"__compile:ts:watch": "tsc -w -p tsconfig.release.json",
 		"lint": "tslint --format stylish --project tsconfig.json",
 		"test": "jest --coverage",
 		"test:watch": "jest --watch"
