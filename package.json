@@ -10,6 +10,7 @@
 		"__compile:ts": "tsc -p tsconfig.release.json",
 		"__compile:ts:watch": "tsc -w -p tsconfig.release.json",
 		"format": "prettier \"src/**\" --write",
+		"__format:debug": "prettier \"src/**\" --list-different",
 		"lint": "tslint --format stylish --project tsconfig.json",
 		"test": "jest --coverage",
 		"test:watch": "jest --watch",
@@ -20,13 +21,17 @@
 	"license": "ISC",
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm run format && npm test"
+			"pre-commit": "lint-staged"
 		}
+	},
+	"lint-staged": {
+		"src/*.ts": ["npm run format", "git add"]
 	},
 	"devDependencies": {
 		"@types/jest": "^23.3.8",
 		"husky": "^1.1.2",
 		"jest": "^23.6.0",
+		"lint-staged": "^8.0.0",
 		"parcel-bundler": "^1.10.3",
 		"prettier": "^1.14.3",
 		"surge": "^0.20.1",
