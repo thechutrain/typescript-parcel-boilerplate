@@ -9,6 +9,7 @@
 		"publish": "npm run build && surge ./dist parcel-typescript-boilerplate.surge.sh",
 		"__compile:ts": "tsc -p tsconfig.release.json",
 		"__compile:ts:watch": "tsc -w -p tsconfig.release.json",
+		"format": "prettier \"src/**\" --write",
 		"lint": "tslint --format stylish --project tsconfig.json",
 		"test": "jest --coverage",
 		"test:watch": "jest --watch",
@@ -19,7 +20,7 @@
 	"license": "ISC",
 	"husky": {
 		"hooks": {
-			"pre-commit": "npm test"
+			"pre-commit": "npm run format && npm test"
 		}
 	},
 	"devDependencies": {
@@ -27,6 +28,7 @@
 		"husky": "^1.1.2",
 		"jest": "^23.6.0",
 		"parcel-bundler": "^1.10.3",
+		"prettier": "^1.14.3",
 		"surge": "^0.20.1",
 		"ts-jest": "^23.10.4",
 		"tslint": "^5.11.0",
