@@ -1,4 +1,4 @@
-class Person{
+class Person {
 	name: string;
 	age: number;
 	constructor(name: string, age: number) {
@@ -6,8 +6,7 @@ class Person{
 		this.age = age;
 	}
 
-	describeMe(){
+	describeMe() {
 		console.log(`Hi, my name is ${this.name} and I am ${this.age} years old`);
 	}
 }
-
