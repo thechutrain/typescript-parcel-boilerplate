@@ -17,8 +17,14 @@
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"husky": {
+		"hooks": {
+			"pre-commit": "npm test"
+		}
+	},
 	"devDependencies": {
 		"@types/jest": "^23.3.8",
+		"husky": "^1.1.2",
 		"jest": "^23.6.0",
 		"parcel-bundler": "^1.10.3",
 		"surge": "^0.20.1",
