@@ -9,18 +9,33 @@
 		"publish": "npm run build && surge ./dist parcel-typescript-boilerplate.surge.sh",
 		"__compile:ts": "tsc -p tsconfig.release.json",
 		"__compile:ts:watch": "tsc -w -p tsconfig.release.json",
+		"format": "prettier \"src/**\" --write",
+		"__format:debug": "prettier \"src/**\" --list-different",
 		"lint": "tslint --format stylish --project tsconfig.json",
-		"test": "jest --coverage",
+		"test": "jest",
+		"test:coverage": "jest --coverage",
 		"test:watch": "jest --watch",
 		"surge": "surge"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged && npm run test",
+			"pre-push": "npm run test:coverage"
+		}
+	},
+	"lint-staged": {
+		"src/*.ts": ["npm run format", "git add"]
+	},
 	"devDependencies": {
 		"@types/jest": "^23.3.8",
+		"husky": "^1.1.2",
 		"jest": "^23.6.0",
+		"lint-staged": "^8.0.0",
 		"parcel-bundler": "^1.10.3",
+		"prettier": "^1.14.3",
 		"surge": "^0.20.1",
 		"ts-jest": "^23.10.4",
 		"tslint": "^5.11.0",

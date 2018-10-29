@@ -26,3 +26,17 @@ $ npm run start
 - Jest
 - TSlint & AirBnb style guide
 - surge
+
+## Recommended VS Code config:
+```
+{
+	"eslint.enable": false,
+	"tslint.configFile": "tslint.json",
+	"tslint.enable": false,
+	"tslint.autoFixOnSave": false,
+	"tslint.run": "onSave",
+	"editor.formatOnSave": false,
+	"jest.pathToJest": "npm run test --"
+}
+
+```
