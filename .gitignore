@@ -9,6 +9,10 @@ node_modules/
 # Coverage
 coverage
 
+# Parcel Bundler
+.cache/
+dist/
+
 # Transpiled files
 build/
 
